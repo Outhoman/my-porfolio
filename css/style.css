@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+:root{
+    --soft-blue:#00B4D8;
+    --very-soft-blue:#90E0EF;
+    --white-blue:#CAF0F8;
+    --hard-blue:#03045E;
+    --Lime-Green: hsl(136, 65%, 51%);
+
+}
+
+*{
+    box-sizing:border-box;
+    padding: 0;
+    margin:0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--white-blue);
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin:10px 0;
+
+}
+
+nav{
+    background-color:var(--soft-blue);
+    border-radius: 10px;
+    margin:0 35px;
+    
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li{
+    padding: 30px;
+    list-style: none;
+    color: #2b2b2b;
+    font-weight: 900;
+    font-size: .875rem;
+    transition: all 600ms ease-in;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav ul li.active,
+nav ul li:hover{
+    background-color:var(--very-soft-blue);
+}
+
+nav ul li:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+nav ul li:last-child:hover{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+nav.sticky{
+    margin: unset;
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    z-index: 100;
+    border-radius: unset;
+    padding: 20px 0;
+
+}
+
+nav.sticky li.active,
+nav.sticky li:hover{
+    border-radius: unset;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+.hamburger{
+    display: none;
+
+}
+/* Responsive Navbar */
+    @media(max-width:800px){
+        nav ul{
+            flex-direction: column;
+            align-items: center;
+            /* display: none; */
+        }
+
+        nav {
+            position: absolute;
+            left: 5%;
+            transform: translateY(-130%);
+            left:0;
+            right:0;
+            top:5%;
+            z-index: 3;
+            border-radius: unset;
+            padding: 20px 0; 
+            transition: all 1s ease-in;
+        }
+
+        nav.resp-nav{
+            transform: translateY(10%);
+            margin: 0 20px;
+        }
+
+        .hamburger{
+            display: block;
+            cursor: pointer;
+            position: fixed;
+            right: 5%;
+            top: 3%;
+            z-index: 3;
+            padding: 20px;
+            transition: all 1s ease-in;
+        }
+
+        .hamburger:hover{
+            background-color: var(--Lime-Green);
+            border-radius: 50%;
+        }   
+         nav ul li:first-child ,
+         nav ul li:last-child:hover ,
+         nav ul li{
+            border-radius: unset; 
+            width:80vw ;
+            text-align: center;
+        }
+    }
+
+/* Responsive Navbar Ends */
+
+/* Dropdown menu */
+
+.dropdown-content{
+    background-color:var(--soft-blue);
+    position:absolute;
+    left:30%;
+    top:20%;
+    z-index: 3;
+    padding:.75rem;
+    border-radius: .25rem;
+    box-shadow: 5px 5px 10px  black;
+    opacity:0;    
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 150ms ease-in-out;
+
+}
+
+.dropdown-content.active-for-drop-down ,
+.dropdown-content:hover 
+{
+    opacity:1;    
+    pointer-events:visible;
+    
+}
+
+.dropdown-content ul{
+    display:flex;
+    flex-direction: column;
+}
+
+
+/* ____NAVBAR ENDS HERE____ */
+
+
+.first-page{
+    text-align: center;
+    margin: 30px 0 10px 0;
+    height: 70vh;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image: url('../images/sunset-3095689.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.first-page .head-one::before{
+    content:'Welcome To';
+    display:block;
+    color:#646060;
+    padding-bottom: 10px;
+    font-size: 2rem
+}
+
+.first-page .head-one::after{
+    content:'--since 2002--';
+    display:block;
+    font-style: italic;
+    font-size:1rem;
+    color:#646060;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.first-page .head-one{
+    font-family: 'Playball', cursive;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.first-page .paragraph-one{
+    margin: 30px 10rem;
+    padding: 10px;
+    color:var(--very-soft-blue) ;
+}
+
+.certificates h2{
+    text-align: center;
+    border-radius: 10px;
+    /* margin: 0 500px 50px 500px; */
+    margin: 50px 0;
+}
+
+.certficates-img{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.certficates-img img{
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    inset: 0;
+    opacity: 0;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.384);
+    color: lightblue;
+    transform: translateY(-10%);
+    overflow: hidden;
+}
+
+.img-wrapper > .content {
+    transition: 200ms ease-in-out;
+}
+
+.img-wrapper:hover > img {
+    filter: blur(1px);
+}
+
+.img-wrapper:hover > .content{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+/* NUMBERS */
+
+.number{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    text-align: center;
+    padding: 30px 0;
+    height: 30vh;
+    background-color: var(--Lime-Green);
+}
+
+.up-arrow{
+    font-size: 2.7rem;
+    color: var(--soft-blue);
+}
+
+.up-arrow.active-for-back{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    
+}
+
+.up-arrow:hover{
+    color: var(--hard-blue);
+}

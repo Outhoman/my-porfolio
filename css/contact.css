@@ -1,0 +1,23 @@
+.parent-info{
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+
+.contact-info{
+    margin: 40px 0 0 90px;
+
+}
+
+.contact-info li {
+    margin:10px 0 0 40px;
+}
+
+.contact-info a:hover {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.maps{
+    margin: 40px 0;
+}
